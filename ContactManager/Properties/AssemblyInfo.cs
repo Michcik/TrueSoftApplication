@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("ContactManager")]
 [assembly: AssemblyDescription("Contact Management Application")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Michal Januszewski")]
 [assembly: AssemblyProduct("ContactManager")]
 [assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: ComVisible(false)]

@@ -1,4 +1,4 @@
-namespace ContactManager.Models
+namespace ContantManager.Models.Models
 {
     public enum ContactCategory
     {

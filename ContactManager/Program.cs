@@ -1,7 +1,7 @@
-using System;
-using System.Windows.Forms;
 using ContactManager.Data;
 using ContactManager.Forms;
+using System;
+using System.Windows.Forms;
 
 namespace ContactManager
 {

@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
 using ContactManager.Controls;
 using ContactManager.Data;
-using ContactManager.Models;
+using ContantManager.Models.Models;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ContactManager.Forms
 {
@@ -42,13 +41,13 @@ namespace ContactManager.Forms
             {
                 var lbl = new Label
                 {
-                    Text      = "No contacts found.",
-                    AutoSize  = false,
-                    Dock      = DockStyle.Top,
-                    Height    = 40,
+                    Text = "No contacts found.",
+                    AutoSize = false,
+                    Dock = DockStyle.Top,
+                    Height = 40,
                     TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                     ForeColor = System.Drawing.Color.Gray,
-                    Font      = new System.Drawing.Font("Segoe UI", 10F)
+                    Font = new System.Drawing.Font("Segoe UI", 10F)
                 };
                 panelList.Controls.Add(lbl);
                 return;
@@ -58,7 +57,7 @@ namespace ContactManager.Forms
             for (int i = contacts.Count - 1; i >= 0; i--)
             {
                 var card = new ContactCard { Contact = contacts[i] };
-                card.EditRequested   += OnEditRequested;
+                card.EditRequested += OnEditRequested;
                 card.DeleteRequested += OnDeleteRequested;
                 panelList.Controls.Add(card);
             }
@@ -118,9 +117,9 @@ namespace ContactManager.Forms
         {
             using (var dlg = new SaveFileDialog())
             {
-                dlg.Filter   = "CSV Files|*.csv";
+                dlg.Filter = "CSV Files|*.csv";
                 dlg.FileName = "contacts.csv";
-                dlg.Title    = "Export Contacts";
+                dlg.Title = "Export Contacts";
                 if (dlg.ShowDialog() != DialogResult.OK) return;
 
                 try

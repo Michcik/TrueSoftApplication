@@ -1,8 +1,8 @@
+using ContantManager.Models.Models;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using ContactManager.Models;
 
 namespace ContactManager.Controls
 {
@@ -33,9 +33,9 @@ namespace ContactManager.Controls
         {
             if (_contact == null) return;
 
-            lblName.Text     = _contact.FullName;
-            lblEmail.Text    = _contact.Email;
-            lblPhone.Text    = _contact.Phone;
+            lblName.Text = _contact.FullName;
+            lblEmail.Text = _contact.Email;
+            lblPhone.Text = _contact.Phone;
             lblCategory.Text = _contact.Category.ToString();
 
             // Category colour chip
@@ -64,8 +64,8 @@ namespace ContactManager.Controls
             switch (cat)
             {
                 case ContactCategory.Business: return Color.FromArgb(70, 130, 180);   // steel blue
-                case ContactCategory.Family:   return Color.FromArgb(60, 179, 113);   // medium sea green
-                default:                       return Color.FromArgb(147, 112, 219);  // medium purple
+                case ContactCategory.Family: return Color.FromArgb(60, 179, 113);   // medium sea green
+                default: return Color.FromArgb(147, 112, 219);  // medium purple
             }
         }
 

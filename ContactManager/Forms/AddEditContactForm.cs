@@ -1,10 +1,10 @@
+using ContactManager.Data;
+using ContantManager.Models.Models;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using ContactManager.Data;
-using ContactManager.Models;
 
 namespace ContactManager.Forms
 {
@@ -16,7 +16,7 @@ namespace ContactManager.Forms
 
         public AddEditContactForm(ContactRepository repo, int contactId = 0)
         {
-            _repo      = repo;
+            _repo = repo;
             _contactId = contactId;
             InitializeComponent();
             PopulateCategories();
@@ -46,9 +46,9 @@ namespace ContactManager.Forms
             if (c == null) return;
 
             txtFirstName.Text = c.FirstName;
-            txtLastName.Text  = c.LastName;
-            txtEmail.Text     = c.Email;
-            txtPhone.Text     = c.Phone;
+            txtLastName.Text = c.LastName;
+            txtEmail.Text = c.Email;
+            txtPhone.Text = c.Phone;
             cmbCategory.SelectedItem = c.Category;
             _avatarPath = c.AvatarPath;
             UpdateAvatarPreview();
@@ -72,7 +72,7 @@ namespace ContactManager.Forms
             using (var dlg = new OpenFileDialog())
             {
                 dlg.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                dlg.Title  = "Select Avatar Image";
+                dlg.Title = "Select Avatar Image";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     _avatarPath = dlg.FileName;
@@ -87,12 +87,12 @@ namespace ContactManager.Forms
 
             var contact = new Contact
             {
-                Id         = _contactId,
-                FirstName  = txtFirstName.Text.Trim(),
-                LastName   = txtLastName.Text.Trim(),
-                Email      = txtEmail.Text.Trim(),
-                Phone      = txtPhone.Text.Trim(),
-                Category   = (ContactCategory)cmbCategory.SelectedItem,
+                Id = _contactId,
+                FirstName = txtFirstName.Text.Trim(),
+                LastName = txtLastName.Text.Trim(),
+                Email = txtEmail.Text.Trim(),
+                Phone = txtPhone.Text.Trim(),
+                Category = (ContactCategory)cmbCategory.SelectedItem,
                 AvatarPath = _avatarPath
             };
 
